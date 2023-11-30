@@ -46,16 +46,16 @@ cd ./grading-area
 javac -cp .:lib/hamcrest-core-1.3.jar:lib/junit-4.13.2.jar *.java
 java -cp .:lib/hamcrest-core-1.3.jar:lib/junit-4.13.2.jar org.junit.runner.JUnitCore TestListExamples > ./output.txt
 
-printf "\n"
-
 # check error of compilation
 if [ $? -ne 0 ] 
 then
+	printf "\n" 
 	echo 'Error compiling tests.'
-	echo 'Here are the unit test failures: '
+	echo 'Here are the failures: '
 	cat output.txt  
 	exit 1
 else
+	printf "\n" 
 	echo 'No errors compiling the tests.'
 	
 fi
